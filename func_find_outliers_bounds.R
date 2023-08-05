@@ -59,7 +59,7 @@ library(EnvStats)
 #' @export
 #'
 #' @examples
-find_outlier_bounds <- function(x, k = 3){
+find_outlier_bounds_Rosner <- function(x, k = 3){
   x <- x[!is.na(x) & !is.infinite(x)]
   test <- EnvStats::rosnerTest(x, k)
   test_df <- test$all.stats %>%
