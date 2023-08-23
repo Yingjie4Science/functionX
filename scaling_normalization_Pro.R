@@ -22,12 +22,14 @@ robust_scale <- function(x) {
 ## Functions
 
 func_robust_scaling <- function(data, var){
-  data <- data %>%
+  d <- data %>%
     dplyr::mutate_at(vars(var), ~ robust_scale(.))
+  return(d)
 }
 
 
 func_z_scaling <- function(data, var){
-  data <- data %>%
+  d <- data %>%
     dplyr::mutate_at(vars(var), ~ base::scale(., center = TRUE, scale = TRUE))
+  return(d)
 }
