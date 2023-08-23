@@ -37,7 +37,7 @@ func_z_scaling <- function(data, var){
 
 ###' If we want to scale between some bounded arbitrary set of values [a, b]
 ###'  Mean Normalisation
-func_norm_minmax <- function(x){
-  (x- mean(x, na.rm = TRUE)) / (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
+func_norm_minmax <- function(x, a=0, b=1){
+  a + (x- mean(x, na.rm = TRUE)) * (b-a) / (max(x, na.rm = TRUE) - min(x, na.rm = TRUE))
 }
 
